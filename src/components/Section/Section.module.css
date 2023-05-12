@@ -1,0 +1,15 @@
+.sectionWrapper {
+    width: 600px;
+    border: 1px solid grey;
+    padding-top: 15px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .feedbackTitle {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: rgb(13, 85, 167);
+    margin-bottom: 20px;
+  }
+  

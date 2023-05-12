@@ -1,0 +1,17 @@
+.feedbackOptions {
+    margin-bottom: 30px;
+  }
+.feedbackBtn {
+    margin-right: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(13, 85, 167);
+    background-color: #fff;
+    border-radius: 10px;
+    height: 35px;
+    width: 80px;
+    font-size: 16px;
+  }
+  .feedbackBtn:hover {
+    color: #fff;
+    background-color: rgb(13, 85, 167);
+  }
