@@ -1,22 +1,22 @@
 import css from './FeedbackOptions.module.css';
 
 const FeedbackOptions = ({
-  onFeedbackGood,
-  onFeedbackNeutral,
-  onFeedbackBad,
+  // onFeedbackGood,
+  // onFeedbackNeutral,
+  onLeaveFeedback,
 }) => (
   <div className={css.feedbackOptions}>
-    <button type="button" className={css.feedbackBtn} onClick={onFeedbackGood}>
+    <button type="button" className={css.feedbackBtn} onClick={onLeaveFeedback}>
       Good
     </button>
     <button
       type="button"
       className={css.feedbackBtn}
-      onClick={onFeedbackNeutral}
+      onClick={onLeaveFeedback}
     >
       Neutral
     </button>
-    <button type="button" className={css.feedbackBtn} onClick={onFeedbackBad}>
+    <button type="button" className={css.feedbackBtn} onClick={onLeaveFeedback}>
       Bad
     </button>
   </div>
