@@ -1,17 +1,25 @@
 .feedbackOptions {
-    margin-bottom: 30px;
-  }
+  margin-bottom: 30px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
 .feedbackBtn {
-    margin-right: 10px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: rgb(13, 85, 167);
-    background-color: #fff;
-    border-radius: 10px;
-    height: 35px;
-    width: 80px;
-    font-size: 16px;
-  }
-  .feedbackBtn:hover {
-    color: #fff;
-    background-color: rgb(13, 85, 167);
-  }
+  margin-right: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(13, 85, 167);
+  background-color: #fff;
+  border-radius: 10px;
+  height: 35px;
+  width: 80px;
+  font-size: 16px;
+}
+.feedbackBtn:hover {
+  color: #fff;
+  background-color: rgb(13, 85, 167);
+}
+.feedbackOptionsList {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}

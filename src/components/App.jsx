@@ -24,61 +24,17 @@ class App extends Component {
     bad: this.props.bad,
   };
 
-  // handleFeedbackGood = () => {
-  //   console.log('click on btn good');
-  //   this.setState(prevState => ({
-  //     good: prevState.good + 1,
-  //   }));
-  // };
+leaveFeedback = (option) => {
 
-  // handleFeedbackNeutral = () => {
-  //   console.log('click on btn neutral');
-  //   this.setState(prevState => ({
-  //     neutral: prevState.neutral + 1,
-  //   }));
-  // };
-
-  // handleFeedbackBad = () => {
-  //   console.log('click on btn bad');
-  //   this.setState(prevState => ({
-  //     bad: prevState.bad + 1,
-  //   }));
-  // };
-
-  leaveFeedback = e => {
-    const btnType = e.target.innerText.toLowerCase();
-
-    // for (const btn in this.state) {
-    //   if (btn === btnType) {
-    //     this.setState(prevState => (
-    //       this.state[btnType] = prevState[btnType] + 1
-    //     ))
-    //   }
-    // }
-
-    if (btnType === 'bad') {
-      this.setState(prevState => ({
-        bad: prevState[btnType] + 1,
-      }))
+  this.setState(prevState => {
+    return {
+      [option]: prevState[option] + 1
     }
-
-    if (btnType === 'good') {
-      this.setState(prevState => ({
-        good: prevState[btnType] + 1,
-      }))
-    }
-
-    if (btnType === 'neutral') {
-      this.setState(prevState => ({
-        neutral: prevState[btnType] + 1,
-      }))
-    }
-  };
-
+  })
+}
   countTotalFeedback = () => {
     const values = Object.values(this.state);
     const total = values.reduce((acc, value) => value + acc, 0);
-    console.log(total);
     return total;
   };
 
@@ -87,28 +43,31 @@ class App extends Component {
     const total = values.reduce((acc, value) => value + acc, 0);
     const positivePercentage =
       ((this.state.good / total) * 100).toFixed(0) || 0;
-    console.log(positivePercentage);
     return positivePercentage;
   };
 
   render() {
     const { good, neutral, bad } = this.state;
+    const options = Object.keys(this.state);
     return (
-      <Section title="Please leave feedback">
-        <FeedbackOptions
-          options={[good, neutral, bad]}
-          // onFeedbackGood={this.handleFeedbackGood}
-          // onFeedbackNeutral={this.handleFeedbackNeutral}
-          onLeaveFeedback={this.leaveFeedback}
-        />
-        <Statistics
-          good={good}
-          neutral={neutral}
-          bad={bad}
-          total={this.countTotalFeedback()}
-          positivePercentage={this.countPositiveFeedbackPercentage()}
-        />
-      </Section>
+      <>
+        <Section title="Please leave feedback">
+          <FeedbackOptions
+            options={options}
+            onLeaveFeedback={this.leaveFeedback}
+          />
+        </Section>
+
+        <Section title="Statistics">
+          <Statistics
+            good={good}
+            neutral={neutral}
+            bad={bad}
+            total={this.countTotalFeedback()}
+            positivePercentage={this.countPositiveFeedbackPercentage()}
+          />
+        </Section>
+      </>
     );
   }
 }

@@ -4,8 +4,6 @@ import css from './Statistics.module.css';
 
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => (
   <div className={css.statisticsWrapper}>
-    <h2 className={css.statisticsTitle}>Statistics</h2>
-
     {total > 0 ? (
       <div className={css.statistics}>
         <ul className={css.statisticsList}>
@@ -23,7 +21,7 @@ const Statistics = ({ good, neutral, bad, total, positivePercentage }) => (
           </li>
           <li className={css.statisticsItem}>
             <p className={css.statisticsText}>
-              Positive feedback: {positivePercentage || 5} %
+              Positive feedback: {positivePercentage || 0} %
             </p>
           </li>
         </ul>
@@ -40,6 +38,6 @@ Statistics.propTypes = {
   good: PropTypes.number.isRequired,
   neutral: PropTypes.number.isRequired,
   bad: PropTypes.number.isRequired,
-//   total: PropTypes.number.isRequired,
-//   positivePercentage: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.string.isRequired,
 };
